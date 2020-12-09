@@ -54,8 +54,28 @@ namespace StructureDataCsharp08forNicosiored
 
             //_____________Insertar Nuevo Nodo________________
             lnkList.InsertNode("Baltodano", "Jose");
+            
             //_____________Mostrar LinkedList_________________
             lnkList.ViewLinkedList();
+
+            //____________Insertar Nodo la Inicio_____________
+            lnkList.InsertNodeFirst("Shirley");
+
+            //_____________Mostrar LinkedList_________________
+            lnkList.ViewLinkedList();
+
+            //____________Obtener Nodo Indice________________
+            var nodeIndex = lnkList.GetIndexNode(3);
+            Console.WriteLine(nodeIndex);
+
+            //____________Indexadores_________________________
+            Console.WriteLine(lnkList[5]);
+
+            lnkList[5] = "Miguelona";
+
+            lnkList.ViewLinkedList();
+
+
 
             Console.WriteLine("\n\nEnter close..");
             _ = Console.ReadLine();

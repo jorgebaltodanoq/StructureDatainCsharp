@@ -59,6 +59,8 @@ namespace StructureDataCsharp08forNicosiored
                 Console.Write($"[ {data} ] -->");
             }
             Console.Write("NULL");
+
+            Console.WriteLine();
             #endregion
         }
 
@@ -184,6 +186,11 @@ namespace StructureDataCsharp08forNicosiored
             encontradoNode.NextNode = null;
         }
 
+        /// <summary>
+        /// Metodo que inserta un nodo despues del nodo a especificiar
+        /// </summary>
+        /// <param name="data"> Data: Es la informacion del nodo</param>
+        /// <param name="node">Node: Es despues del nodo en donde se insetará</param>
         public void InsertNode(dynamic data, dynamic node)
         {
             //_____________ Node Referencia Insertar________________
@@ -200,7 +207,73 @@ namespace StructureDataCsharp08forNicosiored
 
         }
 
+        /// <summary>
+        /// Metodo que permite insertar nodos al inicio
+        /// </summary>
+        /// <param name="data">data: Permite ingresar el dato del nodo</param>
+        public void InsertNodeFirst(dynamic data)
+        {
+            //________Referenciar a nodo Cabecera___________
+            referenceNode = headNode;
+
+            //________Crear Nuevo Nodo______________________
+            Node newNodo = new Node();
+            newNodo.DataNode = data;
+
+            //_______Cambiar las referencias________________
+            newNodo.NextNode = referenceNode.NextNode;
+            referenceNode.NextNode = newNodo;
 
 
+        }
+
+        public Node GetIndexNode(int index)
+        {
+            //_________Verificar si esta vacia__________
+            if (EmptyLinkedList(out string cadena) != true) { return null; }
+
+            //_________Crea nuevo nodo__________
+            Node tempNode = null;
+            int i = -1;
+
+            //_______________Recorrer Linkedlist____________
+            referenceNode = headNode;
+
+            #region While for LinkedList
+            while (referenceNode.NextNode != null)
+            {
+                referenceNode = referenceNode.NextNode;
+                i++;
+
+                if (i == index)
+                {
+                    tempNode = referenceNode;
+                }
+
+            }
+            #endregion
+
+            return tempNode;
+        }
+
+       public dynamic this[int indice]
+       {
+            get 
+            {
+                referenceNode = GetIndexNode(indice);
+                return referenceNode.DataNode;
+            }
+            set 
+            {
+                referenceNode = GetIndexNode(indice);
+                if (referenceNode.NextNode != null)
+                {
+                    referenceNode.DataNode = value;
+
+                }
+            }
+
+       }
+        
     }
 }
