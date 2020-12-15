@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="LinkedListBase.cs" />
     <Compile Include="NodoBase.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
