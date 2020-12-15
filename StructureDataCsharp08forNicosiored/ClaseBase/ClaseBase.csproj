@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E668EA3-F748-4858-94B4-E1D5EF052C29}</ProjectGuid>
+    <ProjectGuid>{14A8A369-CF92-4816-9EA4-858B95775368}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AlgorithmSort</RootNamespace>
-    <AssemblyName>AlgorithmSort</AssemblyName>
+    <RootNamespace>ClaseBase</RootNamespace>
+    <AssemblyName>ClaseBase</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MetodosBubble.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="LinkedListBase.cs" />
+    <Compile Include="NodoBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClaseBase\ClaseBase.csproj">
-      <Project>{14a8a369-cf92-4816-9ea4-858b95775368}</Project>
-      <Name>ClaseBase</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlgorithmSort
+namespace ClaseBase
 {
-    class Node
+    public class NodoBase
     {
         public dynamic DataNode { get; set; }
-        public Node NextNode { get; set; } = null;
+        public NodoBase NextNode { get; set; } = null;
 
-        public Node() { }
+        public NodoBase() { }
 
         public override string ToString()
         {

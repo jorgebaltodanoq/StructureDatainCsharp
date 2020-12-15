@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StructureDataCsharp08forNicosiored
 {
     class Program
@@ -12,11 +13,10 @@ namespace StructureDataCsharp08forNicosiored
         {
             //____________Variables_______________
 
-
-
             //____________Instancias______________
             var lnkList = new LinkedList();
 
+            
             //_____________Agrergar nuevos nodos________
             lnkList.AddNode("Juan"); //index 0
             lnkList.AddNode("Miguel"); //index 1

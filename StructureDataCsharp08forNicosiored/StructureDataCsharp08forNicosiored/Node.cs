@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StructureDataCsharp08forNicosiored
 {
-    class Node
+    public class Node
     {
         public dynamic DataNode { get; set; }
         public Node NextNode { get; set; } = null;

@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClaseBase;
 
 namespace AlgorithmSort
 {
@@ -10,39 +10,34 @@ namespace AlgorithmSort
     {
         static void Main(string[] args)
         {
-            //Instanciamos LinkedList
-            var lnkList = new LinkedList();
+            var linkedList = new LinkedListBase();
 
-            //Agregar nuevos Nodos a LinkedList
-            lnkList.AddNode("Juan"); //index 0
-            lnkList.AddNode("Miguel"); //index 1
-            lnkList.AddNode("Jorge"); //index 2
-            lnkList.AddNode("Carlos"); //index 3
-            lnkList.AddNode("Martin"); //index 4
-            lnkList.AddNode("Roberto"); //index 5
-            lnkList.AddNode("Jose"); //index 6
-            lnkList.AddNode("Omar"); //index 7
-            lnkList.AddNode("Lorena"); //index 8
+            //Agregar nodos
+            linkedList.AddNode(18);
+            linkedList.AddNode(02);
+            linkedList.AddNode(50);
+            linkedList.AddNode(36);
+            linkedList.AddNode(47);
+            linkedList.AddNode(85);
+            linkedList.AddNode(21);
+            linkedList.AddNode(19);
+            linkedList.AddNode(08);
+            linkedList.AddNode(01);
+            linkedList.AddNode(98);
+            linkedList.AddNode(59);
+            linkedList.AddNode(15);
+            linkedList.AddNode(45);
+            linkedList.AddNode(65);
 
-            //lnkList.AddNode(18);
-            //lnkList.AddNode(1);
-            //lnkList.AddNode(20);
-            //lnkList.AddNode(53);
-            //lnkList.AddNode(25);
-            //lnkList.AddNode(078);
-            //lnkList.AddNode(10);
-            //lnkList.AddNode(09);
-            //lnkList.AddNode(68);
+            //Mostrar los nodos.
+            linkedList.ViewLinkedList();
 
-            //Mostrar nodos LinkedList
-            lnkList.ViewLinkedList("NODOS DE LINKEDLIST");
-
-
-
+           
             //Permite no cerrar el programa..
             Console.WriteLine("Enter for close.");
             _ = Console.ReadLine();
 
+            
         }
     }
 }

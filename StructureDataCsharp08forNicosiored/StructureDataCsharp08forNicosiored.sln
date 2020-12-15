@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurbleSort", "AlgorithmSort
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlgorithmSort", "AlgorithmSort", "{C726FD02-25A9-444E-B01C-166C3DFDD10D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaseBase", "ClaseBase\ClaseBase.csproj", "{14A8A369-CF92-4816-9EA4-858B95775368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{4E668EA3-F748-4858-94B4-E1D5EF052C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E668EA3-F748-4858-94B4-E1D5EF052C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E668EA3-F748-4858-94B4-E1D5EF052C29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A8A369-CF92-4816-9EA4-858B95775368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A8A369-CF92-4816-9EA4-858B95775368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A8A369-CF92-4816-9EA4-858B95775368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A8A369-CF92-4816-9EA4-858B95775368}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CD9A3E24-C45D-444B-87E6-D0EDCB2498B0} = {F6D043FB-3557-4157-A4C3-57933CB37DF1}
 		{4E668EA3-F748-4858-94B4-E1D5EF052C29} = {C726FD02-25A9-444E-B01C-166C3DFDD10D}
+		{14A8A369-CF92-4816-9EA4-858B95775368} = {C726FD02-25A9-444E-B01C-166C3DFDD10D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42624129-529E-4D22-95E1-8C59A512D9BC}
