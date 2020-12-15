@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StructureDataCsharp08forNicosiored
 {
     class Program
@@ -12,11 +13,10 @@ namespace StructureDataCsharp08forNicosiored
         {
             //____________Variables_______________
 
-
-
             //____________Instancias______________
             var lnkList = new LinkedList();
 
+            
             //_____________Agrergar nuevos nodos________
             lnkList.AddNode("Juan"); //index 0
             lnkList.AddNode("Miguel"); //index 1
@@ -54,8 +54,28 @@ namespace StructureDataCsharp08forNicosiored
 
             //_____________Insertar Nuevo Nodo________________
             lnkList.InsertNode("Baltodano", "Jose");
+            
             //_____________Mostrar LinkedList_________________
             lnkList.ViewLinkedList();
+
+            //____________Insertar Nodo la Inicio_____________
+            lnkList.InsertNodeFirst("Shirley");
+
+            //_____________Mostrar LinkedList_________________
+            lnkList.ViewLinkedList();
+
+            //____________Obtener Nodo Indice________________
+            var nodeIndex = lnkList.GetIndexNode(3);
+            Console.WriteLine(nodeIndex);
+
+            //____________Indexadores_________________________
+            Console.WriteLine(lnkList[5]);
+
+            lnkList[5] = "Miguelona";
+
+            lnkList.ViewLinkedList();
+
+
 
             Console.WriteLine("\n\nEnter close..");
             _ = Console.ReadLine();

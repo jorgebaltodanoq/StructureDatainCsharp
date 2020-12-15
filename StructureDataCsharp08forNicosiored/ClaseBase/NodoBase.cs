@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StructureDataCsharp08forNicosiored
+namespace ClaseBase
 {
-    public class Node
+    public class NodoBase
     {
         public dynamic DataNode { get; set; }
-        public Node NextNode { get; set; } = null;
+        public NodoBase NextNode { get; set; } = null;
 
-        //Constructor
-        public Node() { }
+        public NodoBase() { }
 
-        //Metodo retorna dato.
         public override string ToString()
         {
             return string.Format($"{DataNode}");

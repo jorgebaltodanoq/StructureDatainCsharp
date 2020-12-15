@@ -4,47 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StructureDataCsharp08forNicosiored
+namespace ClaseBase
 {
-    public class LinkedList
+     public class LinkedListBase
     {
-        public Node headNode;
-        public Node referenceNode;
+        private readonly NodoBase headNodo;
+        private NodoBase referenceNodo;
 
-        public LinkedList()
+        public LinkedListBase()
         {
-            headNode = new Node { NextNode = null };
+            headNodo = new NodoBase
+            {
+                NextNode = null
+            };
         }
 
         /// <summary>
-        /// Metodo que agrerga un nuevo Node y dato a LinkedList
+        /// Metodo que agrerga un nuevo NodoBasey dato a LinkedList
         /// </summary>
         /// <param name="data"></param>
         public void AddNode(dynamic data) //Miguel
         {
-            referenceNode = headNode;
+            referenceNodo= headNodo;
 
             //______Update referencia al ultimo Node________
-            while (referenceNode.NextNode != null)
+            while (referenceNodo.NextNode != null)
             {
-                referenceNode = referenceNode.NextNode;
+                referenceNodo= referenceNodo.NextNode;
             }
 
             #region Actualizar LinkedList
             //________________Nuevo Node______________________
-            //Node newNode = new Node(); //1. Crea neuvo Node
-            //newNode.DataNode = data; //  2. Insertar dato Node
-            //newNode.NextNode = null; //  3. Siguiente es nulo
-
-            //Forma actualizada de inicializar, acceder datos.
-            Node newNodo = new Node
+            NodoBase newNodo = new NodoBase //1. Crea neuvo Node
             {
-                DataNode = data,
-                NextNode = null
+                DataNode = data, //2.Insertar dato Node
+                NextNode = null  //  3. Siguiente es nulo
             };
 
             //______________Actualizar lista___________________
-            referenceNode.NextNode = newNodo;
+            referenceNodo.NextNode= newNodo;
             #endregion
         }
 
@@ -53,15 +51,15 @@ namespace StructureDataCsharp08forNicosiored
         /// </summary>
         public void ViewLinkedList()
         {
-            referenceNode = headNode; //Ubicar en Node cabecera
+            referenceNodo= headNodo; //Ubicar en NodoBasecabecera
 
             #region RecorrerLinkedList
             //____________Recorrer LinkedList_______________
-            while (referenceNode.NextNode != null)
+            while (referenceNodo.NextNode != null)
             {
-                //__________Mostrar Dato Node Actual_________
-                referenceNode = referenceNode.NextNode;
-                var data = referenceNode.DataNode;
+                //__________Mostrar Dato NodoBaseActual_________
+                referenceNodo= referenceNodo.NextNode;
+                var data = referenceNodo.DataNode;
                 Console.Write($"[ {data} ] -->");
             }
             Console.Write("NULL");
@@ -77,10 +75,10 @@ namespace StructureDataCsharp08forNicosiored
         /// <returns>Retorna true si con tiene Nodes o false en caso no </returns>
         public bool EmptyLinkedList(out string cadena)
         {
-            referenceNode = headNode;
+            referenceNodo= headNodo;
 
             #region Condicion
-            if (referenceNode.NextNode != null)
+            if (referenceNodo.NextNode!= null)
             {
                 cadena = "El LinkedList contiene Nodes.";
                 return true;
@@ -94,15 +92,15 @@ namespace StructureDataCsharp08forNicosiored
         }
 
         /// <summary>
-        /// Metodo que permite encontrar un Node en LinkedList
+        /// Metodo que permite encontrar un NodoBaseen LinkedList
         /// </summary>
         /// <param name="data"></param>
-        /// <returns>Returnal un null en caso no exista y en caso si, retorna un Node con el dato</returns>
-        public Node FindNode(dynamic data, out string mensaje)
+        /// <returns>Returnal un null en caso no exista y en caso si, retorna un NodoBasecon el dato</returns>
+        public NodoBase FindNode(dynamic data, out string mensaje)
         {
 
             //___________________Evaluar si es vacia_______________
-            referenceNode = headNode; // Referencia a Node cabecera
+            referenceNodo= headNodo; // Referencia a NodoBasecabecera
             if (EmptyLinkedList(out string rspta) != true)
             {
                 mensaje = rspta;
@@ -110,38 +108,38 @@ namespace StructureDataCsharp08forNicosiored
             } //Saber si esta vacia
 
             //__________________Buscar Node, si no esta vacia LinkedList_______________________
-            while (referenceNode.NextNode != null)
+            while (referenceNodo.NextNode!= null)
             {
-                referenceNode = referenceNode.NextNode; //Actualizamos referencia
-                if (referenceNode.DataNode == data) //Evaluamos si el dato es igual al del Node
+                referenceNodo= referenceNodo.NextNode; //Actualizamos referencia
+                if (referenceNodo.DataNode== data) //Evaluamos si el dato es igual al del Node
                 {
-                    mensaje = "\n El Node encontrado es:";
-                    return referenceNode; // Retornamos el Node en caso sean iguales
+                    mensaje = "\n El NodoBase encontrado es:";
+                    return referenceNodo; // Retornamos el NodoBaseen caso sean iguales
                 }
             }
 
-            //__________________En caso el Node no sea encontrado_____________________
-            mensaje = "\n El Node no ha sido en contrado...";
+            //__________________En caso el NodoBaseno sea encontrado_____________________
+            mensaje = "\n El NodoBaseno ha sido en contrado...";
             return null;
 
         }
 
         /// <summary>
-        /// Encuentra el indice de un Node dado..
+        /// Encuentra el indice de un NodoBasedado..
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
         public int FindIndexFirst(dynamic data)
         {
             int index = -1; //Variable retornar indice.
-            referenceNode = headNode;// Referenciar Node cabecera
+            referenceNodo= headNodo;// Referenciar NodoBasecabecera
 
-            while (referenceNode.NextNode != null)
+            while (referenceNodo.NextNode!= null)
             {
                 index++;
-                referenceNode = referenceNode.NextNode;
+                referenceNodo= referenceNodo.NextNode;
 
-                if (referenceNode.DataNode == data)
+                if (referenceNodo.DataNode== data)
                 {
                     return index;
                 }
@@ -152,24 +150,24 @@ namespace StructureDataCsharp08forNicosiored
         }
 
         /// <summary>
-        /// Metodo que retorna el Node anterior al indicado
+        /// Metodo que retorna el NodoBaseanterior al indicado
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public Node FindNodeBefore(dynamic data)
+        public NodoBase FindNodeBefore(dynamic data)
         {
-            referenceNode = headNode; //Referencia Node Cabecera
+            referenceNodo= headNodo; //Referencia NodoBaseCabecera
 
-            //________________Encuentra Node Anterior_______________
-            while (referenceNode.NextNode != null && referenceNode.NextNode.DataNode != data)
-                referenceNode = referenceNode.NextNode;
+            //________________Encuentra NodoBaseAnterior_______________
+            while (referenceNodo.NextNode!= null && referenceNodo.NextNode.DataNode!= data)
+                referenceNodo= referenceNodo.NextNode;
 
-            return referenceNode; //Retorna el Node anterior.
+            return referenceNodo; //Retorna el NodoBaseanterior.
 
         }
 
         /// <summary>
-        /// Metodo  que elimina un Node de LinkedList
+        /// Metodo  que elimina un NodoBasede LinkedList
         /// </summary>
         public void DeleteNode(dynamic data)
         {
@@ -177,19 +175,19 @@ namespace StructureDataCsharp08forNicosiored
             //____________Verificar No estea Vacia_______________
             if (EmptyLinkedList(out _) != true) { return; }
 
-            //____________Encontrar Node trabajar________________
+            //____________Encontrar NodoBasetrabajar________________
 
-            Node anteriorNode = FindNodeBefore(data);//Encontramos Node anterior 
-            Node encontradoNode = FindNode(data, out string _);//Encontrar el Node
+            NodoBase anteriorNode= FindNodeBefore(data);//Encontramos NodoBaseanterior 
+            NodoBase encontradoNode= FindNode(data, out string _);//Encontrar el Node
 
             //_____________Si no encuentra Node, salir____________
-            if (encontradoNode == null) { return; }
+            if (encontradoNode== null) { return; }
 
             //____________Saltar Node_____________________________
-            anteriorNode.NextNode = encontradoNode.NextNode;
+            anteriorNode.NextNode= encontradoNode.NextNode;
 
-            //___________Quitar Node Actual_______________________
-            encontradoNode.NextNode = null;
+            //___________Quitar NodoBaseActual_______________________
+            encontradoNode.NextNode= null;
         }
 
         /// <summary>
@@ -199,16 +197,16 @@ namespace StructureDataCsharp08forNicosiored
         /// <param name="node">Node: Es despues del nodo en donde se insetará</param>
         public void InsertNode(dynamic data, dynamic node)
         {
-            //_____________ Node Referencia Insertar________________
-            referenceNode = FindNode(node, out string _);
-            if (referenceNode == null) { return; }
+            //_____________ NodoBaseReferencia Insertar________________
+            referenceNodo= FindNode(node, out string _);
+            if (referenceNodo== null) { return; }
 
             //____________Crear e Insertar Node_____________________
-            Node newNode = new Node { DataNode = data };
-
+            NodoBase newNodo = new NodoBase { DataNode = data };
+            
             //___________Trabajar Referencias Node___________________________
-            newNode.NextNode = referenceNode.NextNode;
-            referenceNode.NextNode = newNode;
+            newNodo.NextNode= referenceNodo.NextNode;
+            referenceNodo.NextNode= newNodo;
 
         }
 
@@ -219,65 +217,71 @@ namespace StructureDataCsharp08forNicosiored
         public void InsertNodeFirst(dynamic data)
         {
             //________Referenciar a nodo Cabecera___________
-            referenceNode = headNode;
+            referenceNodo = headNodo;
 
             //________Crear Nuevo Nodo______________________
-            Node newNodo = new Node { DataNode = data };
+            NodoBase newNodo = new NodoBase { DataNode = data };
 
             //_______Cambiar las referencias________________
-            newNodo.NextNode = referenceNode.NextNode;
-            referenceNode.NextNode = newNodo;
+            newNodo.NextNode= referenceNodo.NextNode;
+            referenceNodo.NextNode= newNodo;
 
 
         }
 
-        public Node GetIndexNode(int index)
+        public NodoBase GetIndexNode(int index)
         {
             //_________Verificar si esta vacia__________
             if (EmptyLinkedList(out string _) != true) { return null; }
 
             //_________Crea nuevo nodo__________
-            Node tempNode = null;
+            NodoBase tempNodo= null;
             int i = -1;
 
             //_______________Recorrer Linkedlist____________
-            referenceNode = headNode;
+            referenceNodo= headNodo;
 
             #region While for LinkedList
-            while (referenceNode.NextNode != null)
+            while (referenceNodo.NextNode!= null)
             {
-                referenceNode = referenceNode.NextNode;
+                referenceNodo= referenceNodo.NextNode;
                 i++;
 
                 if (i == index)
                 {
-                    tempNode = referenceNode;
+                    tempNodo= referenceNodo;
                 }
 
             }
             #endregion
 
-            return tempNode;
+            return tempNodo;
         }
 
-       public dynamic this[int indice]
-       {
-            get 
+        public dynamic this[int indice]
+        {
+            get
             {
-                referenceNode = GetIndexNode(indice);
-                return referenceNode.DataNode;
+                referenceNodo= GetIndexNode(indice);
+                return referenceNodo.DataNode;
             }
-            set 
+            set
             {
-                referenceNode = GetIndexNode(indice);
-                if (referenceNode.NextNode != null)
+                referenceNodo= GetIndexNode(indice);
+                if (referenceNodo.NextNode!= null)
                 {
-                    referenceNode.DataNode = value;
+                    referenceNodo.DataNode= value;
 
                 }
             }
 
-       }
-        
+        }
+
+        public void SwapNode(int valueA, int valueB, LinkedListBase lnkBase)
+        {
+            var temp = lnkBase[valueA]; //Capturo el nodo en esa posicion
+            lnkBase[valueA] = lnkBase[valueB];
+            lnkBase[valueB] = temp;
+        }
     }
 }
