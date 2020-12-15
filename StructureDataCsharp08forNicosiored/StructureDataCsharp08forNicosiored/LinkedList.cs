@@ -34,7 +34,7 @@ namespace StructureDataCsharp08forNicosiored
             #region Actualizar LinkedList
             //________________Nuevo Node______________________
             Node newNode = new Node(); //1. Crea neuvo Node
-            newNode.DataNode = data; //  2. Insertar dato al Node
+            newNode.DataNode = data; //  2. Insertar dato Node
             newNode.NextNode = null; //  3. Siguiente es nulo
 
             //______________Actualizar lista___________________
