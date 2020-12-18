@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ClaseBase;
+﻿using ClaseBase;
+using System;
 
 namespace AlgorithmSort
 {

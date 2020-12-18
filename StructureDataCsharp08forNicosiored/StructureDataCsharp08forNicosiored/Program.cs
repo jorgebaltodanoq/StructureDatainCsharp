@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace StructureDataCsharp08forNicosiored
@@ -16,7 +12,7 @@ namespace StructureDataCsharp08forNicosiored
             //____________Instancias______________
             var lnkList = new LinkedList();
 
-            
+
             //_____________Agrergar nuevos nodos________
             lnkList.AddNode("Juan"); //index 0
             lnkList.AddNode("Miguel"); //index 1
@@ -54,7 +50,7 @@ namespace StructureDataCsharp08forNicosiored
 
             //_____________Insertar Nuevo Nodo________________
             lnkList.InsertNode("Baltodano", "Jose");
-            
+
             //_____________Mostrar LinkedList_________________
             lnkList.ViewLinkedList();
 

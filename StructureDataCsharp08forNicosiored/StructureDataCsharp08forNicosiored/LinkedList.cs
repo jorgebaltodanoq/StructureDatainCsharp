@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StructureDataCsharp08forNicosiored
 {
@@ -260,14 +256,14 @@ namespace StructureDataCsharp08forNicosiored
             return tempNode;
         }
 
-       public dynamic this[int indice]
-       {
-            get 
+        public dynamic this[int indice]
+        {
+            get
             {
                 referenceNode = GetIndexNode(indice);
                 return referenceNode.DataNode;
             }
-            set 
+            set
             {
                 referenceNode = GetIndexNode(indice);
                 if (referenceNode.NextNode != null)
@@ -277,7 +273,7 @@ namespace StructureDataCsharp08forNicosiored
                 }
             }
 
-       }
-        
+        }
+
     }
 }

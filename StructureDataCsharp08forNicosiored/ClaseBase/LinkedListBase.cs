@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClaseBase
 {
-     public class LinkedListBase
+    public class LinkedListBase
     {
         private readonly NodoBase headNodo;
         private NodoBase referenceNodo;
-      
+
         public LinkedListBase()
         {
             headNodo = new NodoBase
@@ -25,12 +21,12 @@ namespace ClaseBase
         /// <param name="data"></param>
         public void AddNode(dynamic data) //Miguel
         {
-            referenceNodo= headNodo;
+            referenceNodo = headNodo;
 
             //______Update referencia al ultimo Node________
             while (referenceNodo.NextNode != null)
             {
-                referenceNodo= referenceNodo.NextNode;
+                referenceNodo = referenceNodo.NextNode;
             }
 
             #region Actualizar LinkedList
@@ -42,7 +38,7 @@ namespace ClaseBase
             };
 
             //______________Actualizar lista___________________
-            referenceNodo.NextNode= newNodo;
+            referenceNodo.NextNode = newNodo;
             #endregion
         }
 
@@ -52,9 +48,9 @@ namespace ClaseBase
         public void ViewLinkedList()
         {
             #region Titulo
-            Console.WriteLine("==================\n"+ "Lista de nodos" + "\n================== \n");
+            Console.WriteLine("==================\n" + "Lista de nodos" + "\n================== \n");
             #endregion
-          
+
             referenceNodo = headNodo; //Ubicar en NodoBasecabecera
 
             #region RecorrerLinkedList
@@ -62,7 +58,7 @@ namespace ClaseBase
             while (referenceNodo.NextNode != null)
             {
                 //__________Mostrar Dato NodoBaseActual_________
-                referenceNodo= referenceNodo.NextNode;
+                referenceNodo = referenceNodo.NextNode;
                 var data = referenceNodo.DataNode;
                 Console.Write($"[ {data} ] -->");
             }
@@ -79,10 +75,10 @@ namespace ClaseBase
         /// <returns>Retorna true si con tiene Nodes o false en caso no </returns>
         public bool EmptyLinkedList(out string cadena)
         {
-            referenceNodo= headNodo;
+            referenceNodo = headNodo;
 
             #region Condicion
-            if (referenceNodo.NextNode!= null)
+            if (referenceNodo.NextNode != null)
             {
                 cadena = "El LinkedList contiene Nodes.";
                 return true;
@@ -104,7 +100,7 @@ namespace ClaseBase
         {
 
             //___________________Evaluar si es vacia_______________
-            referenceNodo= headNodo; // Referencia a NodoBasecabecera
+            referenceNodo = headNodo; // Referencia a NodoBasecabecera
             if (EmptyLinkedList(out string rspta) != true)
             {
                 mensaje = rspta;
@@ -112,10 +108,10 @@ namespace ClaseBase
             } //Saber si esta vacia
 
             //__________________Buscar Node, si no esta vacia LinkedList_______________________
-            while (referenceNodo.NextNode!= null)
+            while (referenceNodo.NextNode != null)
             {
-                referenceNodo= referenceNodo.NextNode; //Actualizamos referencia
-                if (referenceNodo.DataNode== data) //Evaluamos si el dato es igual al del Node
+                referenceNodo = referenceNodo.NextNode; //Actualizamos referencia
+                if (referenceNodo.DataNode == data) //Evaluamos si el dato es igual al del Node
                 {
                     mensaje = "\n El NodoBase encontrado es:";
                     return referenceNodo; // Retornamos el NodoBaseen caso sean iguales
@@ -136,14 +132,14 @@ namespace ClaseBase
         public int FindIndexFirst(dynamic data)
         {
             int index = -1; //Variable retornar indice.
-            referenceNodo= headNodo;// Referenciar NodoBasecabecera
+            referenceNodo = headNodo;// Referenciar NodoBasecabecera
 
-            while (referenceNodo.NextNode!= null)
+            while (referenceNodo.NextNode != null)
             {
                 index++;
-                referenceNodo= referenceNodo.NextNode;
+                referenceNodo = referenceNodo.NextNode;
 
-                if (referenceNodo.DataNode== data)
+                if (referenceNodo.DataNode == data)
                 {
                     return index;
                 }
@@ -160,11 +156,11 @@ namespace ClaseBase
         /// <returns></returns>
         public NodoBase FindNodeBefore(dynamic data)
         {
-            referenceNodo= headNodo; //Referencia NodoBaseCabecera
+            referenceNodo = headNodo; //Referencia NodoBaseCabecera
 
             //________________Encuentra NodoBaseAnterior_______________
-            while (referenceNodo.NextNode!= null && referenceNodo.NextNode.DataNode!= data)
-                referenceNodo= referenceNodo.NextNode;
+            while (referenceNodo.NextNode != null && referenceNodo.NextNode.DataNode != data)
+                referenceNodo = referenceNodo.NextNode;
 
             return referenceNodo; //Retorna el NodoBaseanterior.
 
@@ -181,17 +177,17 @@ namespace ClaseBase
 
             //____________Encontrar NodoBasetrabajar________________
 
-            NodoBase anteriorNode= FindNodeBefore(data);//Encontramos NodoBaseanterior 
-            NodoBase encontradoNode= FindNode(data, out string _);//Encontrar el Node
+            NodoBase anteriorNode = FindNodeBefore(data);//Encontramos NodoBaseanterior 
+            NodoBase encontradoNode = FindNode(data, out string _);//Encontrar el Node
 
             //_____________Si no encuentra Node, salir____________
-            if (encontradoNode== null) { return; }
+            if (encontradoNode == null) { return; }
 
             //____________Saltar Node_____________________________
-            anteriorNode.NextNode= encontradoNode.NextNode;
+            anteriorNode.NextNode = encontradoNode.NextNode;
 
             //___________Quitar NodoBaseActual_______________________
-            encontradoNode.NextNode= null;
+            encontradoNode.NextNode = null;
         }
 
         /// <summary>
@@ -202,15 +198,15 @@ namespace ClaseBase
         public void InsertNode(dynamic data, dynamic node)
         {
             //_____________ NodoBaseReferencia Insertar________________
-            referenceNodo= FindNode(node, out string _);
-            if (referenceNodo== null) { return; }
+            referenceNodo = FindNode(node, out string _);
+            if (referenceNodo == null) { return; }
 
             //____________Crear e Insertar Node_____________________
             NodoBase newNodo = new NodoBase { DataNode = data };
-            
+
             //___________Trabajar Referencias Node___________________________
-            newNodo.NextNode= referenceNodo.NextNode;
-            referenceNodo.NextNode= newNodo;
+            newNodo.NextNode = referenceNodo.NextNode;
+            referenceNodo.NextNode = newNodo;
 
         }
 
@@ -227,8 +223,8 @@ namespace ClaseBase
             NodoBase newNodo = new NodoBase { DataNode = data };
 
             //_______Cambiar las referencias________________
-            newNodo.NextNode= referenceNodo.NextNode;
-            referenceNodo.NextNode= newNodo;
+            newNodo.NextNode = referenceNodo.NextNode;
+            referenceNodo.NextNode = newNodo;
 
 
         }
@@ -244,7 +240,7 @@ namespace ClaseBase
             //if (EmptyLinkedList(out string _) != true) { return null; }
 
             //_________Crea nuevo nodo__________
-            NodoBase tempNodo= null;
+            NodoBase tempNodo = null;
             int i = -1;
 
             //_______________Recorrer Linkedlist____________
@@ -256,7 +252,7 @@ namespace ClaseBase
                 referenceNodo = referenceNodo.NextNode;
                 i++;
 
-                if (i == index) {tempNodo = referenceNodo;}
+                if (i == index) { tempNodo = referenceNodo; }
 
             }
             #endregion
@@ -268,16 +264,15 @@ namespace ClaseBase
         {
             get
             {
-                referenceNodo= GetIndexNode(indice);
+                referenceNodo = GetIndexNode(indice);
                 return referenceNodo.DataNode;
             }
             set
             {
-                referenceNodo= GetIndexNode(indice);
-                if (referenceNodo.NextNode!= null)
+                referenceNodo = GetIndexNode(indice);
+                if (referenceNodo.NextNode != null)
                 {
-                    referenceNodo.DataNode= value;
-
+                    referenceNodo.DataNode = value;
                 }
             }
 
@@ -286,11 +281,12 @@ namespace ClaseBase
         private void SwapNode(int valueA, int valueB, LinkedListBase lnkBase)
         {
             var temp = lnkBase[valueA];
-            lnkBase[valueA] = lnkBase[valueB]; 
+            lnkBase[valueA] = lnkBase[valueB];
             lnkBase[valueB] = temp;
+
         }
 
-        public int  GetLength()
+        public int GetLength()
         {
             referenceNodo = headNodo;
             int length = -1;
@@ -304,19 +300,18 @@ namespace ClaseBase
             return length;
         }
 
-        public  void SortBubble( int length, LinkedListBase lnkList)
+        public void SortBubble(int length, LinkedListBase lnkList)
         {
             for (int outer = 1; outer < length; outer++) //14
             {
-                for (int inner = 0; inner < length - outer ; inner++)  //length = 14
+                for (int inner = 0; inner < length - outer; inner++)  //length = 14
                 {
                     if (lnkList[inner] > lnkList[inner + 1])
                     {
                         SwapNode(inner, inner + 1, lnkList);
                     }
                 }
-                
             }
         }
-     }
+    }
 }
