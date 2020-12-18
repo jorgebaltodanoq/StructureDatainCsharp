@@ -1,7 +1,0 @@
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\bin\Debug\ClaseBase.exe.config
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\bin\Debug\ClaseBase.exe
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\bin\Debug\ClaseBase.pdb
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\obj\Debug\ClaseBase.csproj.CoreCompileInputs.cache
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\obj\Debug\ClaseBase.exe
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\obj\Debug\ClaseBase.pdb
-D:\DESARROLLOAPP2020\CSHARP\StructureDatainCsharp\StructureDataCsharp08forNicosiored\ClaseBase\obj\Debug\ClaseBase.csprojAssemblyReference.cache

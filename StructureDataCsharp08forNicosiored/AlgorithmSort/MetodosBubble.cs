@@ -8,9 +8,7 @@ namespace AlgorithmSort
 {
     static class MetodosBubble
     {
-        public static void SortBubble(this LinkedListBase linkedListBase)
-        { 
 
-        }
+       
     }
 }

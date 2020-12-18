@@ -10,7 +10,7 @@ namespace ClaseBase
     {
         private readonly NodoBase headNodo;
         private NodoBase referenceNodo;
-
+      
         public LinkedListBase()
         {
             headNodo = new NodoBase
@@ -51,7 +51,11 @@ namespace ClaseBase
         /// </summary>
         public void ViewLinkedList()
         {
-            referenceNodo= headNodo; //Ubicar en NodoBasecabecera
+            #region Titulo
+            Console.WriteLine("==================\n"+ "Lista de nodos" + "\n================== \n");
+            #endregion
+          
+            referenceNodo = headNodo; //Ubicar en NodoBasecabecera
 
             #region RecorrerLinkedList
             //____________Recorrer LinkedList_______________
@@ -229,28 +233,30 @@ namespace ClaseBase
 
         }
 
+        /// <summary>
+        /// Metodo que te retorna el indice de un nodo dado el valor 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>Index es el valor del nodo</returns>
         public NodoBase GetIndexNode(int index)
         {
             //_________Verificar si esta vacia__________
-            if (EmptyLinkedList(out string _) != true) { return null; }
+            //if (EmptyLinkedList(out string _) != true) { return null; }
 
             //_________Crea nuevo nodo__________
             NodoBase tempNodo= null;
             int i = -1;
 
             //_______________Recorrer Linkedlist____________
-            referenceNodo= headNodo;
+            referenceNodo = headNodo;
 
             #region While for LinkedList
-            while (referenceNodo.NextNode!= null)
+            while (referenceNodo.NextNode != null)
             {
-                referenceNodo= referenceNodo.NextNode;
+                referenceNodo = referenceNodo.NextNode;
                 i++;
 
-                if (i == index)
-                {
-                    tempNodo= referenceNodo;
-                }
+                if (i == index) {tempNodo = referenceNodo;}
 
             }
             #endregion
@@ -258,7 +264,7 @@ namespace ClaseBase
             return tempNodo;
         }
 
-        public dynamic this[int indice]
+        public int this[int indice]
         {
             get
             {
@@ -277,11 +283,40 @@ namespace ClaseBase
 
         }
 
-        public void SwapNode(int valueA, int valueB, LinkedListBase lnkBase)
+        private void SwapNode(int valueA, int valueB, LinkedListBase lnkBase)
         {
-            var temp = lnkBase[valueA]; //Capturo el nodo en esa posicion
-            lnkBase[valueA] = lnkBase[valueB];
+            var temp = lnkBase[valueA];
+            lnkBase[valueA] = lnkBase[valueB]; 
             lnkBase[valueB] = temp;
         }
-    }
+
+        public int  GetLength()
+        {
+            referenceNodo = headNodo;
+            int length = -1;
+
+            while (referenceNodo.NextNode != null)
+            {
+                referenceNodo = referenceNodo.NextNode;
+                length++;
+            }
+
+            return length;
+        }
+
+        public  void SortBubble( int length, LinkedListBase lnkList)
+        {
+            for (int outer = 1; outer < length; outer++) //14
+            {
+                for (int inner = 0; inner < length - outer ; inner++)  //length = 14
+                {
+                    if (lnkList[inner] > lnkList[inner + 1])
+                    {
+                        SwapNode(inner, inner + 1, lnkList);
+                    }
+                }
+                
+            }
+        }
+     }
 }
